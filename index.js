@@ -24,7 +24,7 @@ api.get("/", (_, res) => {
 });
 
 api.post("/", (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { text: txt, email, name } = req.body;
   const mailOptions = {
     from: process.env.EMAIL_ADDRESS,
@@ -37,8 +37,8 @@ api.post("/", (req, res) => {
   };
 
   transporter.sendMail(mailOptions, (err, inf) => {
-    if (err) res.status(500);
-    else res.status(250);
+    if (err) res.status(500).redirect(process.env.REDIRECT_ERROR);
+    else res.status(200).redirect(process.env.REDIRECT_SUCCESS);
   });
 });
 
