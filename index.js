@@ -37,8 +37,8 @@ api.post("/", (req, res) => {
   };
 
   transporter.sendMail(mailOptions, (err, inf) => {
-    if (err) res.status(500).send(err);
-    else res.status(200).send(inf);
+    if (err) res.status(500);
+    else res.status(250);
   });
 });
 
