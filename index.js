@@ -29,6 +29,7 @@ api.post("/", (req, res) => {
   const mailOptions = {
     from: process.env.EMAIL_ADDRESS,
     to: process.env.EMAIL_FORWARD_ADDRESS,
+    replyTo: email,
     subject: "Kontaktformular mariettaullmann.de",
     text: `von: ${name} \n email: ${email} \n\n ${txt}`,
     html: `<p>von: ${name}</p>
