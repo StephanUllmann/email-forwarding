@@ -30,7 +30,7 @@ api.post("/", (req, res) => {
     from: process.env.EMAIL_ADDRESS,
     to: process.env.EMAIL_FORWARD_ADDRESS,
     replyTo: email,
-    subject: "Kontaktformular mariettaullmann.de",
+    subject: "Balbla",
     text: `von: ${name} \n email: ${email} \n\n ${txt}`,
     html: `<p>von: ${name}</p>
            <a href="mailto:${email}">${email}</a><br/>
